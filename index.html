@@ -5,7 +5,7 @@
 <style type="text/css">
   body {
     font-family: Helvetica;
-    background: url(http://subtlepatterns.com/patterns/stardust.png);
+    /*background: url(http://subtlepatterns.com/patterns/stardust.png);*/
   }
   .slabtexted .slabtext{display:-moz-inline-box;display:inline-block;white-space:nowrap}.slabtextinactive .slabtext{display:inline;white-space:normal;font-size:1em !important;letter-spacing:inherit !important;word-spacing:inherit !important;*letter-spacing:0 !important;*word-spacing:0 !important;}.slabtextdone .slabtext{display:block;line-height:0.9;}
   h1 {
@@ -16,7 +16,7 @@
 
   }
   p {
-    color: #aaa;
+    color: #777;
   }
   .amp {
     font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
@@ -36,7 +36,7 @@
   h1,h2,h3 {
     font-family: 'Oswald', "Impact", Charcoal, Arial Black, Gadget, Sans serif;
     margin-bottom: 30px;
-    color: #F5F5F5;
+    color: #376dc5;
     text-transform: uppercase;
     -webkit-font-smoothing: antialias;
   }
@@ -44,6 +44,7 @@
     color: #C2113A;
   }
   h3 {
+    color: #376dc5;
     /*color: #376dc5;*/
   }
   h3 .slabtext {
@@ -69,7 +70,7 @@
 
 
 <div class="canvas">
-<canvas resize="true" id="canvas-1" style="background: rgba(0,0,0,0.4)"></canvas>
+<canvas resize="true" id="canvas-1" style="background: #f8f8f8"></canvas>
 </div>
 
 <script type="text/javascript">
@@ -84,7 +85,7 @@ function Ball(r, p, v) {
   this.radius = r;
   this.point = p;
   this.vector = v;
-  this.maxVec = 2;
+  this.maxVec = 1;
   this.numSegment = Math.floor(r / 3 + 2);
   this.boundOffset = [];
   this.boundOffsetBuff = [];
@@ -93,7 +94,7 @@ function Ball(r, p, v) {
     fillColor: {
       hue: 0,
       saturation: 0,
-      brightness: Math.random()/50 + 0.05
+      brightness: Math.random()/50 + 0.93
     }
     // blendMode: 'screen'
   });
@@ -200,7 +201,7 @@ for (var i = 0; i < numBalls; i++) {
     angle: 360 * Math.random(),
     length: Math.random() * 10
   });
-  var radius = Math.random() * 30 + 110;
+  var radius = Math.random() * 30 + 90;
   balls.push(new Ball(radius, position, vector));
 }
 
