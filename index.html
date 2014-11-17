@@ -137,8 +137,8 @@ Ball.prototype = {
 
     this.path.smooth();
     for (var i = 0; i < this.numSegment; i ++) {
-      if (this.boundOffset[i] < this.radius / 4)
-        this.boundOffset[i] = this.radius / 4;
+      if (this.boundOffset[i] < this.radius / 8)
+        this.boundOffset[i] = this.radius / 8;
       var next = (i + 1) % this.numSegment;
       var prev = (i > 0) ? i - 1 : this.numSegment - 1;
       var offset = this.boundOffset[i];
