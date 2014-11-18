@@ -40,17 +40,18 @@
       text-align: center;
       display: block;
       width: 90%;
-      max-width: 750px;
+      max-width: 600px;
       margin: 30px auto;
       position: relative;
       z-index: 10;
     }
     h1,h2,h3 {
       font-family: 'Oswald', "Impact", Charcoal, Arial Black, Gadget, Sans serif;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       color: #222;
       text-transform: uppercase;
       -webkit-font-smoothing: antialias;
+      line-height: 1em;
     }
     h2 {
       color: #C2113A;
@@ -76,14 +77,18 @@
 
 <div id="container">
   <h1>FAB XI</h1>
+
+  <h3>The Eleventh International</h3>
+  <h3>Fab Lab Conference <span class="amp">&</span> Symposium</h3>
+  <h3>Fab is coming home!</h3>
+  <h3>Cambridge, Boston, MA. USA</h3>
   <h2>August 3rd-9th, 2015</h2>
-  <h3>The Eleventh International Fab Lab Conference <span class="amp">&</span> Symposium is coming to Boston, USA. Save the date!</h3>
   <p>info@fab11.org</p>
 </div>
 
 
 <div class="canvas">
-<canvas resize="true" id="canvas-1" style="background: #f8f8f8"></canvas>
+<canvas resize="true" id="canvas-1" style="background: #eee"></canvas>
 </div>
 
 <script type="text/javascript">
@@ -98,7 +103,7 @@ function Ball(r, p, v) {
   this.radius = r;
   this.point = p;
   this.vector = v;
-  this.maxVec = 1;
+  this.maxVec = 2;
   this.numSegment = Math.floor(r / 3 + 2);
   this.boundOffset = [];
   this.boundOffsetBuff = [];
@@ -107,7 +112,7 @@ function Ball(r, p, v) {
     fillColor: {
       hue: 0,
       saturation: 0,
-      brightness: Math.random()/50 + 0.93
+      brightness: 1//-Math.random()/50
     }
     // blendMode: 'screen'
   });
