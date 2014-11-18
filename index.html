@@ -6,63 +6,70 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://rawgit.com/freqdec/slabText/master/js/jquery.slabtext.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,900' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js"></script>
+  <script type="text/javascript">
+  WebFont.load({
+    google: {
+      families: ['Oswald']
+    }
+  });
+  </script>
   <style type="text/css">
-  body {
-    font-family: Helvetica;
-    /*background: url(http://subtlepatterns.com/patterns/stardust.png);*/
-  }
-  .slabtexted .slabtext{display:-moz-inline-box;display:inline-block;white-space:nowrap}.slabtextinactive .slabtext{display:inline;white-space:normal;font-size:1em !important;letter-spacing:inherit !important;word-spacing:inherit !important;*letter-spacing:0 !important;*word-spacing:0 !important;}.slabtextdone .slabtext{display:block;line-height:0.9;}
-  h1 {
-    font-weight: 900;
-  }
-  * {
-    margin: 0;
+    body {
+      font-family: Helvetica;
+      /*background: url(http://subtlepatterns.com/patterns/stardust.png);*/
+    }
+    .slabtexted .slabtext{display:-moz-inline-box;display:inline-block;white-space:nowrap}.slabtextinactive .slabtext{display:inline;white-space:normal;font-size:1em !important;letter-spacing:inherit !important;word-spacing:inherit !important;*letter-spacing:0 !important;*word-spacing:0 !important;}.slabtextdone .slabtext{display:block;line-height:0.9;}
+    h1 {
+      font-weight: 900;
+    }
+    * {
+      margin: 0;
 
-  }
-  p {
-    color: #777;
-  }
-  .amp {
-    font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
-    font-style: italic;
-    font-weight: lighter;
-    font-size: 1.2em;
-  }
-  #container {
-    text-align: center;
-    display: block;
-    width: 90%;
-    max-width: 750px;
-    margin: 30px auto;
-    position: relative;
-    z-index: 10;
-  }
-  h1,h2,h3 {
-    font-family: 'Oswald', "Impact", Charcoal, Arial Black, Gadget, Sans serif;
-    margin-bottom: 30px;
-    color: #222;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialias;
-  }
-  h2 {
-    color: #C2113A;
-  }
-  h3 {
-    color: #222;
-    /*color: #376dc5;*/
-  }
-  h3 .slabtext {
-    margin-bottom: 10px;
-  }
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
+    }
+    p {
+      color: #777;
+    }
+    .amp {
+      font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
+      font-style: italic;
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+    #container {
+      text-align: center;
+      display: block;
+      width: 90%;
+      max-width: 750px;
+      margin: 30px auto;
+      position: relative;
+      z-index: 10;
+    }
+    h1,h2,h3 {
+      font-family: 'Oswald', "Impact", Charcoal, Arial Black, Gadget, Sans serif;
+      margin-bottom: 30px;
+      color: #222;
+      text-transform: uppercase;
+      -webkit-font-smoothing: antialias;
+    }
+    h2 {
+      color: #C2113A;
+    }
+    h3 {
+      color: #222;
+      /*color: #376dc5;*/
+    }
+    h3 .slabtext {
+      margin-bottom: 10px;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +78,6 @@
   <h1>FAB XI</h1>
   <h2>August 3rd-9th, 2015</h2>
   <h3>The Eleventh International Fab Lab Conference <span class="amp">&</span> Symposium is coming to Boston, USA. Save the date!</h3>
-
   <p>info@fab11.org</p>
 </div>
 
