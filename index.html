@@ -77,12 +77,12 @@ function checkBounds() {
 
 
 function initialize() {
-  var style = [{"featureType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"off"},{"lightness":70}]},{},{"featureType":"road","stylers":[{"lightness":70}]}];
+  var style = [{"featureType":"water","stylers":[{"visibility":"on"},{"color":"#b5cbe4"}]},{"featureType":"landscape","stylers":[{"color":"#efefef"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#83a5b0"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#bdcdd3"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e3eed3"}]},{"featureType":"administrative","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"road"},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":70}]},{},{"featureType":"road","stylers":[{"lightness":70}]}];
   // var style = [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}];
 
 
   var mapOptions = {
-    zoom: 10,
+    zoom: 12,
     center: new google.maps.LatLng(42.40,-70.8),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     scrollwheel: false,
@@ -97,6 +97,32 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.360091,-71.09416),
+      map: map,
+      title: 'MIT'
+  });
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.362289, -71.060762),
+      map: map,
+      title: 'Boston'
+  });
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.372113, -71.111193),
+      map: map,
+      title: 'Cambridge'
+  });
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(42.388090, -71.099005),
+      map: map,
+      title: 'Somerville'
+  });
+
+
 
 
   var pointArray = new google.maps.MVCArray(taxiData);
