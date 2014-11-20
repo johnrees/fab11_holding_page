@@ -142,7 +142,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <script type="text/javascript">
   WebFont.load({
     google: {
-      families: ['Oswald']
+      families: ['Oswald', 'Lato']
     }
   });
   </script>
@@ -187,12 +187,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
       line-height: 110px;
       color: #000;
     }
-    .amp {
+    /*.amp {
       font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
       font-style: italic;
       font-weight: lighter;
       font-size: 1.2em;
-    }
+    }*/
     .border {
       display: inline-block;
       clear: both !important;
@@ -201,7 +201,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
       padding-bottom: 8px;
     }
     h3,h2 {
-      font-size: 31px;
+      font-size: 34px;
+      font-family: Lato;
+      font-weight: 200;
+      text-transform: none;
 
       /*-webkit-font-smoothing: antialias;*/
     }
