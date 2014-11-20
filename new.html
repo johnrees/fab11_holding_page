@@ -20,11 +20,15 @@
         padding: 5px;
         border: 1px solid #999;
       }
+      form {
+        margin-bottom: 80px;
+      }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
     <script>
 // Adding 500 Data Points
 var map, pointarray, heatmap;
+var counter = 0;
 
 var taxiData = [
   // new google.maps.LatLng(42.3133735,-71.0571571),
@@ -35,7 +39,41 @@ var taxiData = [
 
   new google.maps.LatLng(42.374909, -71.115179),
   new google.maps.LatLng(42.395542,-71.1037479)
-];
+]
+
+var allowedBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(42.335838, -71.128568),
+  new google.maps.LatLng(42.397985, -71.042394)
+);
+
+function checkBounds() {
+  counter++;
+  if (counter < 20 && !map.getBounds().contains( new google.maps.LatLng(42.335838, -71.13) )) {
+    var C = map.getCenter();
+    var X = C.lng();
+    var Y = C.lat();
+    map.setCenter(new google.maps.LatLng(Y,X-.05));
+    checkBounds();
+  }
+  // if(!allowedBounds.contains(map.getCenter())) {
+  //   var C = map.getCenter();
+  //   var X = C.lng();
+  //   var Y = C.lat();
+
+  //   var AmaxX = allowedBounds.getNorthEast().lng();
+  //   var AmaxY = allowedBounds.getNorthEast().lat();
+  //   var AminX = allowedBounds.getSouthWest().lng();
+  //   var AminY = allowedBounds.getSouthWest().lat();
+
+  //   if (X < AminX) {X = AminX;}
+  //   if (X > AmaxX) {X = AmaxX;}
+  //   if (Y < AminY) {Y = AminY;}
+  //   if (Y > AmaxY) {Y = AmaxY;}
+
+  //   map.setCenter(new google.maps.LatLng(Y,X));
+  // }
+}
+
 
 function initialize() {
 
@@ -58,6 +96,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
 
   var pointArray = new google.maps.MVCArray(taxiData);
 
@@ -83,8 +122,17 @@ function initialize() {
     'rgba(191, 0, 31, 1)',
     'rgba(255, 0, 0, 1)'
   ]
+  google.maps.event.addListener(map,'center_changed',function() { checkBounds(); });
+  google.maps.event.addListener(map,'tilesloaded',function() { checkBounds(); });
+
+  // checkBounds();
   // heatmap.set('gradient', gradient);
 }
+
+
+
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -208,6 +256,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
       background-image: linear-gradient(to bottom, #fefefe, #eeeeee);
       -webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
       box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+    *:focus {
+      border: none;
+    }
+    #mc-embedded-subscribe:hover {
+
+      background: #ABF960;
+      color: #002D00;
+
     }
   </style>
   </head>
