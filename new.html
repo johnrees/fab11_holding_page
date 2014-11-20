@@ -154,9 +154,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
     }
     h3,h2 {
       font-size: 35px;
-      background: rgba(239, 239, 239, 0.6);
+
       /*-webkit-font-smoothing: antialias;*/
     }
+    @media only screen and (max-width : 900px) {
+      h3, h2 {
+        background: rgba(239, 239, 239, 0.6);
+
+      }
+
+    }
+    @media only screen and (max-width : 600px) {
+      * {
+        text-align: left;
+      }
+      #container {
+        padding: 0 10px;
+      }
+    }
+
     a.mailing-list {
       background: #111;
       color: #FFF;
